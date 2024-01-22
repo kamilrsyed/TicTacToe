@@ -26,21 +26,21 @@ def place_marker(board, marker, position):
 
 def win_check(board, mark):
     win_list = [mark, mark, mark]
-    if board[1:4] == win_list or board[4:7] == win_list or board[7:] == win_list:
+    if board[1:4] == win_list or board[4:7] == win_list or board[7:] == win_list:   # Checks winning combinations horizontally 
         return True
     elif board[5] == mark:
-        if (board[1] == mark and board[9] == mark) or (board[3] == mark and board[7] == mark) or (board[2] == mark and board[8] == mark):
+        if (board[1] == mark and board[9] == mark) or (board[3] == mark and board[7] == mark) or (board[2] == mark and board[8] == mark):   # Checks winning combinations diagonally and middle vertical
             return True
     elif board[4] == mark:
-        if (board[1] == mark and board[7] == mark):
+        if (board[1] == mark and board[7] == mark):    # Checks winning combinations left vertical
             return True
     elif board[6] == mark:
-        if (board[3] == mark and board[9] == mark):
+        if (board[3] == mark and board[9] == mark):    # Checks winning combinations right vertical
             return True
     else:
         return False
 
-def choose_first():
+def choose_first():     # Randomly picks first turn
     num = random.randint(1, 2)
     if num == 1:
         return 1
